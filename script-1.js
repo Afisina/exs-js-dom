@@ -61,3 +61,68 @@ const sectionD = document.querySelector("section#d");
 const p6 = sectionD.getElementsByTagName("p")[1];
 p6.style.backgroundColor = "lightblue";
 p6.innerHTML = "Mengubah node root, dari document ke root yang diinginkan, supaya lebih spesifik dan efektif untuk menyeleksi DOM.";
+
+// DOM MANIPULATION (element)
+// element.innerHTML
+const judulE = document.getElementById("judul-e");
+judulE.innerHTML = "<em>Annisa Afisina</em>";
+
+const sectionE = document.querySelector("section#e");
+sectionE.innerHTML = "<div><p>paragraf1</p></div>";
+
+// element.style.<properties>
+const judulF = document.querySelector("#judul-f");
+judulF.style.color = "lightblue";
+judulF.style.backgroundColor = "salmon";
+judulF.innerHTML = "DOM Manipulation (element)";
+
+// element.setAttribute
+const title = document.getElementsByTagName("h1")[0];
+title.setAttribute("name", "annisa");
+
+const link = document.querySelector("section#f a");
+link.setAttribute("link", "ig");
+
+// element.classList
+const p7 = document.querySelector(".p7");
+
+// DOM Manipulation (node)
+const judulH = document.getElementById("judul-h");
+judulH.innerHTML = "DOM Manipulation (node)";
+judulH.style.backgroundColor = "salmon";
+
+// - document.createElement()
+// - document.createTeksNode()
+// - node.appendChild ()
+
+// 1. Buat element baru
+const pBaru = document.createElement("p");
+// 2. Buat node baru
+const teksBaru = document.createTextNode("paragraf baru");
+// 3. Simpan node baru ke dalam elemen baru
+pBaru.appendChild(teksBaru);
+// 4. Simpan element baru ke parent element
+const sectionH = document.getElementById("h");
+sectionH.appendChild(pBaru);
+// - parentNode.removeChild()
+const linkH = document.querySelector("section#h a");
+sectionH.removeChild(linkH);
+// - parentNode.replaceChild()
+const p9 = sectionH.getElementsByTagName("p")[1];
+const h4Baru = document.createElement("h4");
+const subJudul = document.createTextNode("ini subjudul!");
+h4Baru.appendChild(subJudul);
+sectionH.replaceChild(subJudul, p9);
+
+// - node.insertBefore()
+const liBaru = document.createElement("li");
+const itemBaru = document.createTextNode("item baru");
+liBaru.appendChild(itemBaru);
+const ul = document.querySelector("section#h ul");
+const li2 = ul.querySelector("li:nth-child(2)");
+ul.insertBefore(liBaru, li2);
+// kode diatas -> node.insertBefore(nodeBaru, disimpan di mana)
+
+pBaru.style.backgroundColor = "lightgreen";
+h4Baru.style.color = "lightgreen";
+liBaru.style.backgroundColor = "lightgreen";
