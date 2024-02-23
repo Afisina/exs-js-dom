@@ -1,4 +1,4 @@
-// DOM SELECTION
+// === DOM SELECTION ===
 
 // document.getElementById() -> element
 const judul = document.getElementById("judul");
@@ -62,7 +62,7 @@ const p6 = sectionD.getElementsByTagName("p")[1];
 p6.style.backgroundColor = "lightblue";
 p6.innerHTML = "Mengubah node root, dari document ke root yang diinginkan, supaya lebih spesifik dan efektif untuk menyeleksi DOM.";
 
-// DOM MANIPULATION (element)
+// === DOM MANIPULATION (element) ===
 // element.innerHTML
 const judulE = document.getElementById("judul-e");
 judulE.innerHTML = "<em>Annisa Afisina</em>";
@@ -126,3 +126,41 @@ ul.insertBefore(liBaru, li2);
 pBaru.style.backgroundColor = "lightgreen";
 h4Baru.style.color = "lightgreen";
 liBaru.style.backgroundColor = "lightgreen";
+
+// === DOM Events ===
+const judulI = document.getElementById("judul-i");
+judulI.innerHTML = "DOM Events";
+judulI.style.backgroundColor = "burlywood";
+judulI.style.color = "blueviolet";
+
+// Event Handler
+const p12 = document.querySelector(".p12");
+const p13 = document.querySelector(".p13");
+
+function ubahWarnaP12() {
+  p12.style.color = "red";
+  p12.style.backgroundColor = "lightblue";
+}
+
+function ubahWarnaP13() {
+  p13.style.backgroundColor = "lightgreen";
+}
+
+// Event Listener
+const p14 = document.getElementsByClassName("p14")[0];
+p14.innerHTML = "addEventListener()";
+
+p14.addEventListener("click", function () {
+  const ulI = document.querySelector("section#i ul");
+  const liBaruI = document.createElement("li");
+  const itemBaruI = document.createTextNode("item baru");
+  liBaruI.appendChild(itemBaruI);
+  ulI.appendChild(liBaruI);
+});
+
+p14.addEventListener("mouseenter", function () {
+  p14.style.backgroundColor = "lightblue";
+});
+p14.addEventListener("mouseleave", function () {
+  p14.style.backgroundColor = "lightgreen";
+});
