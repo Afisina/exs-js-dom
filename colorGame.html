@@ -19,6 +19,12 @@
       .merah {
         background-color: red;
       }
+      .hijau {
+        background-color: green;
+      }
+      .biru {
+        background-color: blue;
+      }
     </style>
   </head>
   <body>
@@ -27,7 +33,16 @@
 
     <br />
     <div class="kotak merah"></div>
-    <input type="range" name="sliderRed" />
+    <input type="range" name="sliderRed" min="0" max="255" />
+
+    <br />
+    <div class="kotak hijau"></div>
+    <input type="range" name="sliderGreen" min="0" max="255" />
+
+    <br />
+    <div class="kotak biru"></div>
+    <input type="range" name="sliderBlue" min="0" max="255" />
+
     <script src="./JScolorGame.js"></script>
   </body>
 </html>
